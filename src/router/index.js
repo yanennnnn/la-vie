@@ -1,22 +1,88 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import index from '../views/front/Layout.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home,
+    path: '*',
+    redirect: '/index',
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    path: '/',
+    name: 'Layout',
+    redirect: '/index',
+    component: index,
+    children: [
+      {
+        path: 'index',
+        name: 'Home',
+        component: () => import('@/views/front/Index.vue'),
+      },
+      {
+        path: 'products',
+        name: 'Products',
+        component: () => import('@/views/front/Products.vue'),
+      },
+      {
+        path: 'singleProduct/:id',
+        name: 'SingleProduct',
+        component: () => import('@/views/front/SingleProduct.vue'),
+      },
+      {
+        path: 'about',
+        name: 'About',
+        component: () => import('@/views/front/About.vue'),
+      },
+      {
+        path: 'cart',
+        name: 'Cart',
+        component: () => import('@/views/front/Cart.vue'),
+      },
+      {
+        path: '/customerCheckout/:orderId',
+        name: 'CustomerCheckout',
+        component: () => import('@/views/front/CustomerCheckout.vue'),
+      },
+      {
+        path: '/customerComplete/:orderId',
+        name: 'CustomerComplete',
+        component: () => import('@/views/front/CustomerComplete.vue'),
+      },
+    ],
+  },
+  {
+    name: 'login',
+    path: '/login',
+    component: () => import('@/views/admin/Login.vue'),
+  },
+  {
+    path: '/admin',
+    name: 'Dashboard',
+    component: () => import('@/views/admin/Dashboard.vue'),
+    children: [
+      {
+        path: 'createProducts',
+        name: 'CreateProducts',
+        component: () => import('@/views/admin/CreateProducts.vue'),
+      },
+      {
+        path: 'orderLists',
+        name: 'OrderLists',
+        component: () => import('@/views/admin/OrderLists.vue'),
+      },
+      {
+        path: 'createCoupons',
+        name: 'CreateCoupons',
+        component: () => import('@/views/admin/CreateCoupons.vue'),
+      },
+      {
+        path: 'storageList',
+        name: 'StorageList',
+        component: () => import('@/views/admin/StorageList.vue'),
+      },
+    ],
   },
 ];
 
