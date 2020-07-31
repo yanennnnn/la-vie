@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d22cc17"],{f51c:function(n,e,t){"use strict";t.r(e);var c=function(){var n=this,e=n.$createElement;n._self._c;return n._m(0)},r=[function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[t("p",[n._v("圖片列表")])])}],u={name:"StorageList",data:function(){return{}}},a=u,i=t("2877"),l=Object(i["a"])(a,c,r,!1,null,null,null);e["default"]=l.exports}}]);
+//# sourceMappingURL=chunk-2d22cc17.943db93c.js.map

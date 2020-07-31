@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0de70f"],{8650:function(e,n,t){"use strict";t.r(n);var r=function(){var e=this,n=e.$createElement;e._self._c;return e._m(0)},u=[function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[t("p",[e._v("優惠卷列表")])])}],a={name:"CreateCoupons",data:function(){return{}}},c=a,l=t("2877"),o=Object(l["a"])(c,r,u,!1,null,null,null);n["default"]=o.exports}}]);
+//# sourceMappingURL=chunk-2d0de70f.fb11a326.js.map
